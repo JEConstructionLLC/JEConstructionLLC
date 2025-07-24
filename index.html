@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -50,7 +51,7 @@
       color: white;
       margin-top: 40px;
     }
-    h1, h2 {
+    h1, h2, h3 {
       color: #1f2c3e;
     }
     ul {
@@ -62,6 +63,19 @@
     }
     .contact a:hover {
       text-decoration: underline;
+    }
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1em;
+    }
+    form button {
+      background-color: #1f2c3e;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -77,6 +91,7 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#contact">Contact</a>
+    <a href="#calculator">Calculator</a>
   </nav>
 
   <section id="home">
@@ -115,6 +130,38 @@
       <p>📍 Located in Huron, SD – Proudly serving all of South Dakota and surrounding areas</p>
       <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=100083315952177" target="_blank">JE Construction on Facebook</a></p>
     </div>
+  </section>
+
+  <section id="calculator">
+    <h2>Project Size Calculator</h2>
+    <p>Enter the dimensions of your project below to calculate total square footage. Submit your info and we’ll follow up with a free estimate!</p>
+    <form action="https://formsubmit.co/sales@jeconstructiondoit.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <input type="number" name="length" id="length" placeholder="Length (ft)" required>
+      <input type="number" name="width" id="width" placeholder="Width (ft)" required>
+      <input type="text" name="project" placeholder="Project Type (Garage, House, etc.)" required>
+      <input type="hidden" name="_subject" value="New Project Estimate Request">
+      <input type="hidden" name="_captcha" value="false">
+      <textarea name="message" id="message" rows="4" placeholder="Additional Details (optional)"></textarea>
+      <button type="submit">Calculate & Send</button>
+    </form>
+    <script>
+      const lengthInput = document.getElementById('length');
+      const widthInput = document.getElementById('width');
+      const messageField = document.getElementById('message');
+      [lengthInput, widthInput].forEach(input => {
+        input.addEventListener('input', () => {
+          const length = parseFloat(lengthInput.value);
+          const width = parseFloat(widthInput.value);
+          if (!isNaN(length) && !isNaN(width)) {
+            const sqft = length * width;
+            messageField.value = `Estimated Square Footage: ${sqft} sq ft`;
+          }
+        });
+      });
+    </script>
   </section>
 
   <footer>
