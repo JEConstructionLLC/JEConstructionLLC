@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JE Construction LLC | JE Spray Foam</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -21,7 +19,7 @@
       padding: 10px 20px;
       text-align: center;
     }
-    header .logo-container {
+    .logo-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -44,9 +42,7 @@
       font-weight: bold;
       display: inline-block;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
     section {
       padding: 40px 20px;
       max-width: 1100px;
@@ -62,7 +58,7 @@
       color: white;
       margin-top: 40px;
     }
-    footer .footer-links {
+    .footer-links {
       margin-top: 10px;
     }
     footer a {
@@ -76,20 +72,9 @@
       vertical-align: middle;
       margin-right: 8px;
     }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    h1, h2, h3 {
-      color: #1f2c3e;
-      margin: 10px 0;
-    }
-    ul {
-      line-height: 1.8;
-    }
-    .contact a {
-      color: #1f2c3e;
-      text-decoration: none;
-    }
+    footer a:hover { text-decoration: underline; }
+    h1, h2, h3 { color: #1f2c3e; margin: 10px 0; }
+    ul { line-height: 1.8; }
     .contact a[href^="tel"] {
       font-weight: bold;
       display: inline-block;
@@ -99,9 +84,7 @@
       border-radius: 5px;
       margin: 4px 0;
     }
-    .contact a:hover {
-      background-color: #30445d;
-    }
+    .contact a:hover { background-color: #30445d; }
     form input, form select, form textarea, form button {
       display: block;
       width: 100%;
@@ -116,12 +99,8 @@
       cursor: pointer;
     }
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.4em;
-      }
-      header p {
-        font-size: 1em;
-      }
+      header h1 { font-size: 1.4em; }
+      header p { font-size: 1em; }
       nav a {
         display: block;
         margin: 10px 0;
@@ -134,60 +113,111 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
-      <img src="JE C.png" alt="JE Construction Logo">
-      <img src="JESpray.png" alt="JE Spray Foam Logo">
-    </div>
-    <h1>JE Construction LLC (DBA JE Spray Foam)</h1>
-    <p>Serving Huron, South Dakota and Surrounding Areas</p>
-  </header>
+<header>
+  <div class="logo-container">
+    <img src="/mnt/data/A_digital_vector_graphic_displays_the_logo_for_JE_.png" alt="JE Construction Logo">
+    <img src="/mnt/data/A_logo_for_\"Spray_Foam_JE_Construction,_LLC\"_featu.png" alt="JE Spray Foam Logo">
+  </div>
+  <h1>JE Construction LLC (DBA JE Spray Foam)</h1>
+  <p>Serving Huron, South Dakota and Surrounding Areas</p>
+</header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#contact">Contact</a>
-    <a href="#calculator">Spray Foam Calculator</a>
-    <a href="#estimate">Free Estimate Request</a>
-  </nav>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#calculator">Spray Foam Calculator</a>
+  <a href="#estimate">Free Estimate Request</a>
+</nav>
 
-  <!-- Existing sections stay unchanged -->
+<section id="home">
+  <h2>Welcome to JE Construction LLC</h2>
+  <p>From the foundation to the final touch, we deliver top-quality work on every job — big or small. Whether it's new construction or home improvement, we're ready to bring your vision to life.</p>
+  <ul>
+    <li>Siding</li>
+    <li>Roofing</li>
+    <li>Remodeling</li>
+    <li>Concrete Work</li>
+    <li>Framing & Drywall</li>
+    <li>Painting</li>
+    <li>Flooring</li>
+    <li>Spray Foam Insulation (Closed & Open Cell)</li>
+    <li>General Construction & Additions</li>
+  </ul>
+</section>
 
-  <section id="estimate">
-    <h2>Request a Free Estimate</h2>
-    <p>Use the form below to request a free estimate for remodeling, construction, new building, or general projects. We will follow up as soon as possible.</p>
-    <form action="https://formsubmit.co/sales@jeconstructiondoit.com" method="POST">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="text" name="address" placeholder="Project Address" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <select name="project_type" required>
-        <option value="">Select Project Type</option>
-        <option value="Remodeling">Remodeling</option>
-        <option value="New Construction">New Construction</option>
-        <option value="Concrete Work">Concrete Work</option>
-        <option value="Roofing">Roofing</option>
-        <option value="Flooring">Flooring</option>
-        <option value="Siding">Siding</option>
-        <option value="Deck or Porch">Deck or Porch</option>
-        <option value="Other">Other</option>
-      </select>
-      <textarea name="description" rows="6" placeholder="Briefly describe your project..." required></textarea>
-      <input type="hidden" name="_subject" value="New Estimate Request from Website">
-      <input type="hidden" name="_captcha" value="false">
-      <button type="submit">Submit Estimate Request</button>
-    </form>
-  </section>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p class="contact">
+    Call us:<br>
+    <a href="tel:7872333313">Jose Escribano – Owner: 787-233-3313</a><br>
+    <a href="tel:6053506478">Ian Escribano – Sales: 605-350-6478</a><br>
+    <a href="tel:7872332207">Maria Rodriguez – Manager: 787-233-2207</a><br>
+    Email: <a href="mailto:sales@jeconstructiondoit.com">sales@jeconstructiondoit.com</a>
+  </p>
+</section>
 
-  <footer>
-    <p>&copy; 2025 JE Construction LLC | JE Spray Foam — All rights reserved</p>
-    <div class="footer-links">
-      <a href="https://www.facebook.com/profile.php?id=100083315952177" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">Facebook Page
-      </a>
-      <a href="http://chamber.huronsd.com/list/member/je-construction-llc-7189" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2936/2936787.png" alt="Huron Chamber" style="height:28px;">Huron Chamber Listing
-      </a>
-    </div>
+<section id="calculator">
+  <h2>Spray Foam Calculator</h2>
+  <form action="https://formsubmit.co/sales@jeconstructiondoit.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="number" step="any" name="length" placeholder="Length (ft)" required>
+    <input type="number" step="any" name="width" placeholder="Width (ft)" required>
+    <input type="number" step="any" name="height" placeholder="Height (ft)" required>
+    <select name="insulation_type" required>
+      <option value="">Select Insulation Type</option>
+      <option value="Open Cell">Open Cell</option>
+      <option value="Closed Cell">Closed Cell</option>
+    </select>
+    <textarea name="notes" rows="4" placeholder="Additional Notes or Questions"></textarea>
+    <input type="hidden" name="_subject" value="Spray Foam Calculator Submission">
+    <input type="hidden" name="_captcha" value="false">
+    <button type="submit">Submit Calculation</button>
+  </form>
+</section>
+
+<section id="estimate">
+  <h2>Request a Free Estimate</h2>
+  <p>Use the form below to request a free estimate for remodeling, construction, new building, or general projects. We will follow up as soon as possible.</p>
+  <form action="https://formsubmit.co/sales@jeconstructiondoit.com" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="text" name="address" placeholder="Project Address" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <select name="project_type" required>
+      <option value="">Select Project Type</option>
+      <option value="Remodeling">Remodeling</option>
+      <option value="New Construction">New Construction</option>
+      <option value="Concrete Work">Concrete Work</option>
+      <option value="Roofing">Roofing</option>
+      <option value="Flooring">Flooring</option>
+      <option value="Siding">Siding</option>
+      <option value="Deck or Porch">Deck or Porch</option>
+      <option value="Other">Other</option>
+    </select>
+    <textarea name="description" rows="6" placeholder="Briefly describe your project..." required></textarea>
+    <input type="hidden" name="_subject" value="New Estimate Request from Website">
+    <input type="hidden" name="_captcha" value="false">
+    <button type="submit">Submit Estimate Request</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 JE Construction LLC | JE Spray Foam — All rights reserved</p>
+  <div class="footer-links">
+    <a href="https://www.facebook.com/profile.php?id=100083315952177" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">Facebook Page
+    </a>
+    <a href="http://chamber.huronsd.com/list/member/je-construction-llc-7189" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2936/2936787.png" alt="Huron Chamber" style="height:28px;">Huron Chamber Listing
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
+
   </footer>
 
 </body>
