@@ -14,8 +14,8 @@
       color: #333;
     }
     header {
-      background: #1f2c3e;
-      color: white;
+      background: #eaeaea;
+      color: #1f2c3e;
       padding: 10px 20px;
       text-align: center;
     }
@@ -98,13 +98,6 @@
       border: none;
       cursor: pointer;
     }
-    #foam-result {
-      font-weight: bold;
-      margin-top: 10px;
-      background: #e1f4e8;
-      padding: 10px;
-      border-left: 5px solid #2e7d32;
-    }
     @media (max-width: 768px) {
       header h1 { font-size: 1.4em; }
       header p { font-size: 1em; }
@@ -117,13 +110,25 @@
       }
     }
   </style>
+  <script>
+    function calculateFoamEstimate() {
+      const length = parseFloat(document.getElementById('length').value) || 0;
+      const width = parseFloat(document.getElementById('width').value) || 0;
+      const height = parseFloat(document.getElementById('height').value) || 0;
+      const volume = length * width * height;
+      const squareFeet = length * width;
+
+      document.getElementById('volume').value = volume.toFixed(2) + ' cubic ft';
+      document.getElementById('squareFeet').value = squareFeet.toFixed(2) + ' sq ft';
+    }
+  </script>
 </head>
-<body>
+<body oninput="calculateFoamEstimate()">
 
 <header>
   <div class="logo-container">
-    <img src="JE C.png" alt="JE Construction Logo">
-    <img src="JESpray.png" alt="JE Spray Foam Logo">
+    <img src="A_digital_vector_graphic_displays_the_logo_for_JE_.png" alt="JE Construction Logo">
+    <img src="A_logo_for_\"Spray_Foam_JE_Construction,_LLC\"_featu.png" alt="JE Spray Foam Logo">
   </div>
   <h1>JE Construction LLC (DBA JE Spray Foam)</h1>
   <p>Serving Huron, South Dakota and Surrounding Areas</p>
@@ -154,32 +159,33 @@
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <div class="contact">
-    <p><strong>Phone Contacts:</strong></p>
-    <p><a href="tel:7872333313">Jose Escribano – Owner: 787-233-3313</a></p>
-    <p><a href="tel:6053506478">Ian Escribano – Sales: 605-350-6478</a></p>
-    <p><a href="tel:7872332207">Maria Rodriguez – Manager: 787-233-2207</a></p>
-    <p><strong>Email:</strong> <a href="mailto:sales@jeconstructiondoit.com">sales@jeconstructiondoit.com</a></p>
-  </div>
+  <p class="contact">
+    Call us:<br>
+    <a href="tel:7872333313">Jose Escribano – Owner: 787-233-3313</a><br>
+    <a href="tel:6053506478">Ian Escribano – Sales: 605-350-6478</a><br>
+    <a href="tel:7872332207">Maria Rodriguez – Manager: 787-233-2207</a><br>
+    Email: <a href="mailto:sales@jeconstructiondoit.com">sales@jeconstructiondoit.com</a>
+  </p>
 </section>
 
 <section id="foam-calc">
   <h2>Free Estimate: Spray Foam Insulation</h2>
   <p>Calculate your project’s spray foam coverage and request a quote:</p>
-  <form id="foamForm" action="https://formsubmit.co/sales@jeconstructiondoit.com" method="POST">
+  <form action="https://formsubmit.co/sales@jeconstructiondoit.com" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <input type="tel" name="phone" placeholder="Phone Number" required>
-    <input type="number" step="any" id="length" name="length" placeholder="Length (ft)" required>
-    <input type="number" step="any" id="width" name="width" placeholder="Width (ft)" required>
-    <input type="number" step="any" id="height" name="height" placeholder="Height (ft)" required>
+    <input type="number" id="length" step="any" name="length" placeholder="Length (ft)" required>
+    <input type="number" id="width" step="any" name="width" placeholder="Width (ft)" required>
+    <input type="number" id="height" step="any" name="height" placeholder="Insulation Depth (ft)" required>
+    <input type="text" id="squareFeet" name="square_feet" readonly placeholder="Square Feet">
+    <input type="text" id="volume" name="volume" readonly placeholder="Cubic Feet">
     <select name="insulation_type" required>
       <option value="">Select Insulation Type</option>
       <option value="Open Cell">Open Cell</option>
       <option value="Closed Cell">Closed Cell</option>
     </select>
     <textarea name="notes" rows="4" placeholder="Additional Notes or Questions"></textarea>
-    <div id="foam-result"></div>
     <input type="hidden" name="_subject" value="Spray Foam Estimate Request">
     <input type="hidden" name="_captcha" value="false">
     <button type="submit">Submit Foam Estimate</button>
@@ -224,29 +230,5 @@
   </div>
 </footer>
 
-<script>
-  const form = document.getElementById('foamForm');
-  const lengthInput = document.getElementById('length');
-  const widthInput = document.getElementById('width');
-  const heightInput = document.getElementById('height');
-  const resultDiv = document.getElementById('foam-result');
-
-  [lengthInput, widthInput, heightInput].forEach(input => {
-    input.addEventListener('input', () => {
-      const l = parseFloat(lengthInput.value);
-      const w = parseFloat(widthInput.value);
-      const h = parseFloat(heightInput.value);
-
-      if (!isNaN(l) && !isNaN(w) && !isNaN(h)) {
-        const sqFt = l * w * h;
-        resultDiv.innerHTML = `Estimated Cubic Feet: <strong>${sqFt.toFixed(2)}</strong>`;
-      } else {
-        resultDiv.innerHTML = "";
-      }
-    });
-  });
-</script>
-
 </body>
 </html>
-
