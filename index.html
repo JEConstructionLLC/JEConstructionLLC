@@ -26,7 +26,7 @@
       align-items: center;
     }
     header img {
-      max-width: 180px;
+      max-width: 240px;
       height: auto;
       margin: 5px 20px;
     }
@@ -98,6 +98,10 @@
       border: none;
       cursor: pointer;
     }
+    input[readonly] {
+      background-color: #f1f1f1;
+      font-weight: bold;
+    }
     @media (max-width: 768px) {
       header h1 { font-size: 1.4em; }
       header p { font-size: 1em; }
@@ -115,12 +119,12 @@
       const length = parseFloat(document.getElementById('length').value) || 0;
       const width = parseFloat(document.getElementById('width').value) || 0;
       const height = parseFloat(document.getElementById('height').value) || 0;
-      const volume = length * width * height;
       const squareFeet = length * width;
-
-      document.getElementById('volume').value = volume.toFixed(2) + ' cubic ft';
+      const volume = squareFeet * height;
       document.getElementById('squareFeet').value = squareFeet.toFixed(2) + ' sq ft';
+      document.getElementById('volume').value = volume.toFixed(2) + ' cubic ft';
     }
+    window.addEventListener('DOMContentLoaded', calculateFoamEstimate);
   </script>
 </head>
 <body oninput="calculateFoamEstimate()">
